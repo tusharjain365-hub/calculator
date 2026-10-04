@@ -98,3 +98,53 @@ body {
         font-size: 2rem;
     }
 }
+
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal.hidden {
+    display: none;
+}
+.modal-content {
+    background: #111;
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #0ff;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 20px #0ff;
+}
+.close-btn {
+    position: absolute;
+    top: 10px; right: 20px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.close-btn:hover {
+    color: #0ff;
+}
+.neon-bounce {
+    color: #fff;
+    font-size: 3rem;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #f0f,
+        0 0 40px #0ff,
+        0 0 80px #0ff;
+    animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}

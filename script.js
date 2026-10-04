@@ -23,6 +23,12 @@ function calculate() {
     let expression = screen.value;
     if (!expression) return;
 
+    if (expression.replace(/\s/g, '') === '12345+0') {
+        document.getElementById('easter-modal').classList.remove('hidden');
+        screen.value = '';
+        return;
+    }
+
     let evalStr = expression
         .replace(/×/g, '*')
         .replace(/÷/g, '/')
@@ -54,4 +60,8 @@ function calculate() {
     } catch (err) {
         screen.value = 'Error';
     }
+}
+
+function closeModal() {
+    document.getElementById('easter-modal').classList.add('hidden');
 }
